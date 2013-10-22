@@ -16,8 +16,6 @@ local.properties
 .settings/
 .loadpath
 
-assets/img
-
 # External tool builders
 .externalToolBuilders/
 
