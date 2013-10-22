@@ -1,0 +1,27 @@
+extends ../shared/layout
+
+block title
+    title= title
+
+block scripts
+    script.
+        $('.contacts').addClass('active');
+
+block view
+    .contacts
+        h1 Контакты
+        p НаГлянце.рф предоставляет услуги размещений фотоотчетов, анонсов, рекламного материала и т.д., для получения подробной информации обращаться по телефону&nbsp;
+            span.contact 596-896
+            | , либо:
+        p Тел.:&nbsp;
+            span.contact +7(938)302-6896
+        p Руководитель проекта:&nbsp;
+            span.contact
+                a(href="mailto:fotoportal@naglyance.ru") fotoportal@naglyance.ru
+        p Технический руководитель:&nbsp;
+            span.contact
+                a(href="mailto:admin@naglyance.ru") admin@naglyance.ru
+        p Администрация проекта:&nbsp;
+            span.contact
+                a(href="mailto:support@naglyance.ru") support@naglyance.ru
+

@@ -1,0 +1,29 @@
+.upload-album
+    .album-field
+        div.album Альбом
+        input.album-name(type="text",placeholder="Название альбома")
+        .album-error
+    .album-field
+        div.place Место
+        input.album-place(type="text",placeholder="Место проведения")
+        .album-error
+    .album-field
+        div.date Дата
+        input.album-date(type="text")
+        .album-error
+    .upload-block
+        div.photos Фотографии
+        span#addPhotos
+            i.icon-plus
+            |  Добавить фотографии
+    .upload-photo-block
+    #progressBlock
+        .progress
+        span
+        .cancel-upload(title="Отмена")
+span#saveUpload
+    i.icon-ok
+    |  Сохранить
+span#saveCancel.cancel
+    i.icon-remove
+    |  Отмена

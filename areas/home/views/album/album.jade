@@ -1,0 +1,32 @@
+extends ../shared/layout
+
+block title
+    title= title + ' - ' + name
+
+block scripts
+    script.
+        var Photos = !{photos};
+        $(function(){
+            var date = new Date('#{date}');
+            $('#albumDate').html($('#albumDate').html() + date.format('d mmmm yyyy')).attr('data-date', date.format('mm.dd.yyyy'));
+        })
+    script(type="text/javascript", src="/js/photo-modal.js")
+    script(type="text/javascript", src="/js/album.js")
+
+block view
+    h1= 'Отчёт - '
+        span#albumPlace= place
+        | &nbsp-&nbsp
+        span#albumName= name
+    h1#albumDate
+        i.icon-calendar&nbsp;
+    table.album-photos-table
+
+block admin
+    span#editAlbum(title="Редактировать альбом")
+        i.icon-pencil
+    span#deleteAlbum(title="Удалить альбом")
+        i.icon-remove
+    .submit-delete
+        span#submitDelete(title="Удалить") Удалить
+        span#cancelDelete(title="Отмена") Отмена

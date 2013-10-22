@@ -1,0 +1,25 @@
+extends ../shared/layout
+
+block stylesheet
+    link(rel="stylesheet", href="/css/default.css")
+
+block scripts
+    script(type="text/javascript", src="/js/slideshow.js")
+    script.
+        $('.pages a:contains(#{page}):first').addClass('active');
+        Slideshow.Init({
+            slideTable: '.slide-table',
+            albums: !{albums}
+        });
+        $('.fixed-top-menu .photo').addClass('active');
+block title
+    title= title
+
+block view
+    .pages
+        -for(var i = 1; i < pages + 1; i++) {
+            a(href="/?page="+i) #{i}
+        -}
+    table.slide-table
+        tbody
+

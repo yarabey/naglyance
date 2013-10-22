@@ -1,0 +1,36 @@
+{
+	"app": {
+		"host": "localhost",
+		"rootPath": null,
+		"mode": "dev",
+		"server": {
+			"port": 8003,
+			"reListen": 1000
+		}
+	},
+	"redis": {
+		"session": {
+			"host": "pub-redis-13690.us-east-1.1.azure.garantiadata.com",
+			"port": 13690
+		}
+	},
+	"mongo": {
+		"server": {
+			"host": "localhost",
+			"port": 27017,
+			"options": {
+				"auto_reconnect": true,
+				"poolSize": 4
+			}
+		},
+		"db": {
+			"name": "test",
+			"safeTargetValue": true,
+			"options": {
+				"native_parser": false,
+				"strict": false,
+				"safe": false
+			}
+		}
+	}
+}

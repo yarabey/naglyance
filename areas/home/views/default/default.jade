@@ -1,0 +1,42 @@
+extends ../shared/layout
+
+block stylesheet
+    link(rel="stylesheet", href="/css/default.css")
+
+block scripts
+    script(type="text/javascript", src="/js/slideshow.js")
+    script(type="text/javascript", src="/js/default.js")
+    script(type="text/javascript", src="/js/photo-modal.js")
+    script.
+        Slideshow.Init({
+            slideTable: '.slide-table',
+            albums: !{albums}
+        });
+        var Photos = !{photos};
+block title
+    title= title
+
+block view
+    if (announce)
+        table.default-content
+            tr
+                td.afisha-mini
+                    h3 Анонсы
+                    p Нет анонсов
+                    hr.split
+    .toggle
+        i.icon-caret-down.icon-caret-right
+        | Последние фото
+    table.default-content.fix-table.hidden
+        tr
+            td.photo-week
+    .toggle
+        i.icon-caret-down
+        | Отчеты
+    table.slide-table
+        tbody
+    a(href="/?page=1")
+        span#allAlbums
+            i.icon-camera
+            | &nbsp;Все отчёты
+

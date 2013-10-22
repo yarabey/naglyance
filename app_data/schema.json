@@ -1,0 +1,353 @@
+{
+	"id": {
+		"validator": {
+			"notNull": {
+				"message": "id-is-required"
+			},
+			"notEmpty": {
+				"message": "id-is-required"
+			},
+			"len": {
+				"args": [1, 32],
+				"message": "id-has-bad-length"
+			}
+		},
+		"filter": {
+			"xss": true
+		}
+	},
+	"ip": {
+		"validator": {
+			"notNull": {
+				"message": "ip-is-required"
+			},
+			"notEmpty": {
+				"message": "ip-is-required"
+			},
+			"len": {
+				"args": [7, 15],
+				"message": "ip-has-bad-length"
+			}
+		},
+		"filter": {
+			"xss": true
+		}
+	},
+	"application_id": {
+		"validator": {
+			"notNull": {
+				"message": "id-is-required"
+			},
+			"notEmpty": {
+				"message": "id-is-required"
+			},
+			"len": {
+				"args": [40, 40],
+				"message": "id-has-bad-length"
+			}
+		},
+		"filter": {
+			"xss": true
+		}
+	},
+	"email": {
+		"validator": {
+			"notNull": {
+				"message": "email-is-required"
+			},
+			"notEmpty": {
+				"message": "email-is-required"
+			},
+			"len": {
+				"args": [6, 40],
+				"message": "email-has-bad-length"
+			},
+			"regex": {
+				"args": ["^(([^<>()[\\]\\.,;:\\s@\"]+(\\.[^<>()[\\]\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$", "i"],
+				"message": "email-value-has-bad-symbols"
+			}
+		},
+		"filter": {
+			"xss": true
+		}
+	},
+	"application_code": {
+		"validator": {
+			"notNull": {
+				"message": "secret-is-required"
+			},
+			"notEmpty": {
+				"message": "secret-is-required"
+			},
+			"len": {
+				"args": [40, 40],
+				"message": "secret-has-bad-length"
+			}
+		},
+		"filter": {
+			"xss": true
+		}
+	},
+	"timestamp": {
+		"validator": {
+			"notNull": {
+				"message": "timestamp-is-required"
+			},
+			"isInt": {
+				"message": "timestamp-has-bad-format"
+			},
+			"min": {
+				"args": [1],
+				"message": "timestamp-has-bad-value"
+			}
+		},
+		"filter": {
+			"toInt": true
+		}
+	},
+	"address": {
+		"validator": {
+			"notNull": {
+				"message": "address-is-required"
+			},
+			"notEmpty": {
+				"message": "address-is-required"
+			},
+			"len": {
+				"args": [5, 150],
+				"message": "address-has-bad-length"
+			}
+		},
+		"filter": {
+			"trim": true,
+			"xss": true
+		}
+	},
+	"path": {
+		"filter": {
+			"trim": true,
+			"xss": true
+		}
+	},
+	"phone": {
+		"validator": {
+			"notNull": {
+				"message": "phone-is-required"
+			},
+			"notEmpty": {
+				"message": "phone-is-required"
+			},
+			"len": {
+				"args": [17, 20],
+				"message": "phone-has-bad-length"
+			},
+			"regex": {
+				"args": ["^((\\+38)\\s?)\\(?0(39|44|50|63|66|67|68|91|92|93|94|95|96|97|98|99)\\)?-?\\d{3}-?\\d{2}-?\\d{2}$", "i"],
+				"message": "phone-has-bad-symbols"
+			}
+		},
+		"filter": {
+			"trim": true,
+			"phonenumber": true
+		}
+	},
+	"date": {
+		"validator": {
+			"notNull": {
+				"message": "date-is-required"
+			},
+			"notEmpty": {
+				"message": "date-is-required"
+			},
+			"isDate": {
+				"message": "date-has-bad-format"
+			}
+		}
+	},
+	"number": {
+		"validator": {
+			"notNull": {
+				"message": "number-is-required"
+			},
+			"notEmpty": {
+				"message": "number-is-required"
+			},
+			"len": {
+				"args": [1, 15],
+				"message": "number-has-bad-length"
+			},
+			"regex": {
+				"args": ["^[a-zA-Z0-9 ]{1,}$", "i"],
+				"message": "number-has-bad-symbols"
+			}
+		},
+		"filter": {
+			"trim": true,
+			"xss": true,
+			"carnumber": true
+		}
+	},
+	"boolean": {
+		"validator": {
+			"notNull": {
+				"message": "boolean-is-required"
+			},
+			"notEmpty": {
+				"message": "boolean-is-required"
+			},
+			"len": {
+				"args": [4, 5],
+				"message": "boolean-has-bad-length"
+			}
+		},
+		"filter": {
+			"toBooleanStrict": true
+		}
+	},
+	"empty": {
+		"filter": {
+			"emptyString": true
+		}
+	},
+	"array": {
+		"validator": {
+		}
+	},
+	"list": {
+		"validator": {
+		}
+	},
+	"nickname": {
+		"validator": {
+			"notNull": {
+				"message": "nickname-is-required"
+			},
+			"min": {
+				"args": [1],
+				"message": "nickname-has-bad-value"
+			}
+		}
+	},
+	"application_name": {
+		"validator": {
+			"notNull": {
+				"message": "nickname-is-required"
+			},
+			"min": {
+				"args": [1],
+				"message": "nickname-has-bad-value"
+			}
+		},
+		"filter": {
+			"trim": true,
+			"xss": true
+		}
+	},
+    "album_name": {
+        "validator": {
+            "notNull": {
+                "message": "message-is-required"
+            },
+            "notEmpty": {
+                "message": "message-is-required"
+            },
+            "len": {
+                "args": [1, 200],
+                "message": "message-has-bad-length"
+            }
+        },
+        "filter": {
+            "trim": true,
+            "xss": true
+        }
+    },
+	"message": {
+		"validator": {
+			"notNull": {
+				"message": "message-is-required"
+			},
+			"notEmpty": {
+				"message": "message-is-required"
+			},
+			"len": {
+				"args": [0, 1000],
+				"message": "message-has-bad-length"
+			}
+		},
+		"filter": {
+			"trim": true,
+			"xss": true
+		}
+	},
+	"numeric": {
+		"validator": {
+			"notNull": {
+				"message": "numeric-is-required"
+			},
+			"isFloat": {
+				"message": "numeric-has-bad-format"
+			}
+		},
+		"filter": {
+			"toFloat": true
+		}
+	},
+	"int": {
+		"validator": {
+			"notNull": {
+				"message": "integer-is-required"
+			},
+			"isInt": {
+				"message": "integer-has-bad-format"
+			}
+		},
+		"filter": {
+			"toInt": true
+		}
+	},
+	"exception": {
+		"validator": {
+			"notNull": {
+				"message": "exception-is-required"
+			},
+			"notEmpty": {
+				"message": "exception-is-required"
+			},
+			"len": {
+				"args": [1, 4000],
+				"message": "exception-has-bad-length"
+			}
+		},
+		"filter": {
+			"trim": true,
+			"xss": true
+		}
+	},
+	"container_name": {
+		"validator": {
+			"notNull": {
+				"message": "exception-is-required"
+			},
+			"notEmpty": {
+				"message": "exception-is-required"
+			},
+			"len": {
+				"args": [1, 255],
+				"message": "exception-has-bad-length"
+			},
+			"regex": {
+				"args": ["^(([A-Z]|[a-z]|[0-9]|_|-|\\.|\\s)+)$", "i"],
+				"message": "name-value-has-bad-symbols"
+			}
+		},
+		"filter": {
+			"trim": true,
+			"xss": true
+		}
+	},
+	"file_data": {
+		"validator": {
+
+		}
+	}
+}

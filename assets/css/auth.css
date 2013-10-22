@@ -1,0 +1,51 @@
+#authPopup {
+    display: none;
+    width: 260px;
+    right: 0;
+    overflow: hidden;
+    z-index: 1048;
+    top: 0;
+    position: fixed;
+    background: rgba(24, 7, 35, 0.85);
+    padding-bottom: 5px;
+    border-bottom-left-radius: 10px;
+}
+
+#authPopup input {
+    display: block;
+    width: 240px;
+    margin: 0 auto;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+#loginSubmit {
+    display: block;
+    width: auto;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#loginCancel {
+    float: right;
+}
+
+#register {
+    width: 110px;
+    text-align: center;
+}
+
+#authPopup input:first-child {
+    margin-top: 15px;
+}
+
+#authPopup .error {
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    width: 220px;
+    margin: 0 auto;
+    color: red;
+}

@@ -1,0 +1,713 @@
+p {
+    white-space: pre;
+}
+
+a {
+    color: #4D99E0;
+    text-decoration: none;
+}
+
+.upload-popup {
+    z-index: 1010;
+    top: 50px;
+    display: none;
+    overflow: hidden;
+    color: #ffffff;
+    padding-bottom: 5px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+body {
+    margin: 0;
+    background: #000000 url(/img/body-back.jpg) fixed no-repeat;
+    font: normal 0.9em/150% 'Arimo', "Trebuchet MS", arial, verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+.fixed-top-back, .upload-popup {
+    position: fixed;
+    width: 1100px;
+    margin-left: -550px;
+    background: rgb(40, 15, 40);
+    border-radius: 0 0 10px 10px;
+}
+
+.fixed-top-back {
+    top: 0;
+    height: 50px;
+    z-index: 1011;
+}
+
+.border-top-fix {
+    border-radius: 0;
+}
+
+.fixed-top-menu {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -500px;
+    width: 1000px;
+    height: 50px;
+    z-index: 1012;
+    text-align: center;
+}
+
+    .fixed-top-menu ul {
+        margin: 10px;
+        padding: 0;
+    }
+
+    .fixed-top-menu li {
+        height: 100%;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .fixed-top-menu a {
+        color: white;
+        text-decoration: none;
+    }
+
+.fixed-top-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1012;
+}
+
+.fixed-top-logo img {
+    margin: 5px;
+    height: 40px;
+}
+
+.fixed-center-back {
+    position: fixed;
+    background: rgba(24, 7, 35, 0.85);
+    top: 50px;
+    left: 50%;
+    margin-left: -500px;
+    bottom: 0;
+    width: 1000px;
+    z-index: 1000;
+}
+
+.fixed-top-upload {
+    position: absolute;
+    top: 10px;
+    left: 120px;
+    z-index: 1013;
+}
+
+.upload-getting {
+    display: inline-block;
+    height: 22px;
+    margin: 5px 9px 0 6px;
+    width: 22px;
+    background: url("/img/photo-loading-white.gif") no-repeat center;
+    background-size: 100%;
+}
+
+.upload-getting-edit {
+    margin-right: 8px;
+}
+
+#editAlbum,#uploadAnnounce,#deleteAlbum,#uploadPhotos {
+    vertical-align: top;
+    margin: 0 1px;
+}
+
+.submit-delete {
+    padding: 5px 0;
+    border-radius: 10px;
+    background: rgb(40, 15, 40);
+    display: none;
+    margin-left: 37px;
+}
+
+.fixed-top-login {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    z-index: 1013;
+}
+
+.user-email {
+    margin-right: 15px;
+    background: rgba(77,153,224,0.7) !important;
+    cursor: default !important;
+}
+
+.wrapper {
+    position: relative;
+    background: rgba(24, 7, 35, 0.85);
+    width: 1000px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 50px auto 30px auto;
+    color: white;
+    z-index: 1009;
+}
+
+.footer {
+    padding: 20px;
+    background: rgb(24, 7, 35);
+    margin: 30px 20px 10px 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    color: silver;
+    font-size: 13px;
+}
+
+.footer table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+
+
+
+
+
+
+.btn {
+    padding: 5px 10px;
+    background: red;
+    cursor: pointer;
+    border-radius: 7px;
+    border: 1px solid rgb(232, 106, 90);
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.btn-cancel {
+    background: gray;
+    border: 1px solid rgba(0, 0, 0, 0.21);
+    float: right;
+}
+
+.btn-clicked {
+    opacity: 0.5;
+}
+
+
+
+
+#allAlbums {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    margin-left: -50px;
+    width: 100px;
+    text-align: center;
+}
+
+
+
+.modal-fog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1049;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.modal {
+    position: fixed;
+    z-index: 1050;
+    top: 50%;
+    left: 50%;
+    width: 1000px;
+    max-width: 1000px;
+    display: none;
+    min-height: 180px;
+    background: white;
+    border-radius: 14px;
+    border: 2px solid rgb(144, 2, 235);
+}
+
+.modal-header {
+    color: #ffffff;
+    width: 100%;
+    font-size: 2em;
+    padding: 15px 0;
+    text-align: center;
+    background: rgba(144, 2, 235, 0.8);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 2px solid rgb(144, 2, 235);
+}
+
+.modal-body {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.modal-footer {
+    width: 100%;
+    padding: 5px 0;
+    background: rgba(144, 2, 235, 0.4);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 2px solid rgb(144, 2, 235);
+}
+
+.modal-footer .btn {
+   font-size: 1.2em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.upload-photo-block {
+    padding: 20px;
+    border-radius: 5px;
+    height: 200px;
+    max-height: 250px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ccc;
+    -moz-box-shadow: inset 0px 0px 6px #ccc;
+    -webkit-box-shadow: inset 0px 1px 6px #ccc;
+    box-shadow: inset 0px 1px 6px #ccc;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.new-photo-item, .new-photo-item img {
+    width: 290px;
+}
+
+.new-photo-item img {
+    cursor: pointer;
+}
+.new-photo-item .repair {
+    text-align: center;
+    width: 100%;
+    margin-top: 75px;
+}
+
+.repair-photo {
+    display: block;
+    color: #2B587A;
+    cursor: pointer;
+}
+
+.new-photo-item, .upload-photo-loading {
+    display: inline-block;
+    margin-right: 7px;
+    margin-bottom: 10px;
+    height: 195px;
+    vertical-align: top;
+}
+
+.upload-photo-loading {
+    width: 300px;
+    height: 188px;
+    background: url("/img/photo-loading.gif") no-repeat center;
+}
+
+.delete-photo {
+    background: url("/img/delete.gif") #cccccc no-repeat center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-left: -20px;
+    vertical-align: top;
+    border-bottom-left-radius: 5px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-album {
+    margin: 10px;
+    position: relative;
+}
+
+.upload-album .album-date, .upload-album .album-name, .upload-album .album-place {
+    padding: 3px 7px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.upload-album .album, .upload-album .date, .upload-album .place {
+    width: 63px;
+    display: inline-block;
+}
+
+.upload-album .photos {
+    margin: 10px 0 5px 0;
+    display: inline-block;
+}
+
+.upload-album .album-error {
+    font-size: 12px;
+    color: red;
+    display: inline-block;
+    margin-left: 5px;
+    line-height: 26px;
+}
+
+.upload-album .album-name {
+    width: 600px;
+}
+
+.upload-album .album-place {
+    width: 400px;
+}
+
+.upload-album .album-date {
+    width: 150px;
+}
+
+input {
+    border: 1px solid #ccc;
+    -moz-box-shadow: inset 0px 0px 6px #ccc;
+    -webkit-box-shadow: inset 0px 1px 6px #ccc;
+    box-shadow: inset 0px 1px 6px #ccc;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+input:focus {
+    border: 1px solid #9002e1;
+    -webkit-box-shadow: 0 0 7px #9002e1;
+    -moz-box-shadow: 0 0 7px #9002e1;
+    -o-box-shadow: 0 0 7px #9002e1;
+    box-shadow: 0 0 7px #9002e1;
+}
+
+input.error-val {
+    border: 1px solid red;
+    -webkit-box-shadow: 0 0 7px red;
+    -moz-box-shadow: 0 0 7px red;
+    -o-box-shadow: 0 0 7px red;
+    box-shadow: 0 0 7px red;
+}
+
+.ui-button {
+    padding: 2px 4px;
+    font-size: 14px;
+    margin: 0 5px;
+    color: white;
+    border: 1px solid #9002e1;
+}
+
+.ui-state-active {
+    background: white !important;
+    color: #9002e1 !important;
+}
+.ui-button-cancel.ui-state-active {
+    color: #5f5964 !important;
+}
+.ui-button-cancel {
+    float: right;
+    background: #5f5964 url(/img/jquery-ui/ui-bg_highlight-soft_45_5f5964_1x100.png) 50% 50% repeat-x;
+    color: white;
+    border: 1px solid #5f5964;
+}
+
+#addPhotos {
+    float: right;
+    padding: 1px 5px;
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 5px 0 0 0 ;
+}
+
+.upload-block {
+    position: relative;
+}
+
+#progressBlock {
+    position: absolute;
+    display: none;
+    bottom: 0;
+    left: 50%;
+    margin-left: -350px;
+    margin-bottom: -20px;
+    width: 700px;
+    height: 18px;
+    background: rgba(144, 2, 235, 0.5);
+    border: 1px solid #9002e1;
+    border-radius: 10px;
+}
+
+#progressBlock span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+#progressBlock .progress {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: #9002e1;
+    border-radius: 8px;
+}
+
+#progressBlock .cancel-upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 18px;
+    border-radius: 8px;
+    background: url("/img/delete.gif") #9002e1 no-repeat center;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+#progressBlock .cancel-upload:hover {
+    opacity: 1;
+}
+
+.test {
+    height: 700px;
+}
+
+
+
+
+
+
+
+h1 {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    max-width: 960px;
+    line-height: 1.5em;
+}
+
+.album-photos-table {
+    width: 960px;
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+.album-photos-table img {
+    width: 300px;
+    height: 205px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid gray;
+}
+
+.album-photos-table img:hover {
+    border: 2px solid white;
+}
+
+.album-photos-table td {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+#bigPhoto {
+    overflow: visible !important;
+}
+
+#bigPhoto img {
+    max-width: 1000px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.modal-back, .modal-close {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1051;
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+.modal-close {
+    z-index: 1050;
+    right: 0;
+}
+
+.modal-close i {
+    font-size: 40px;
+    position: fixed;
+    top: 50px;
+    right: 30px;
+}
+
+.modal-back:hover, .modal-close:hover {
+    opacity: 0.7;
+}
+
+.modal-back i {
+    font-size: 50px;
+    position: fixed;
+    top: 50px;
+    left: 30px;
+}
+
+.photo-modal {
+    position: fixed;
+    z-index: 1052;
+    top: 50px;
+    left: 50%;
+    height: 700px;
+    margin-left:  -500px;
+    display: none;
+    border: 1px solid #9002e1;
+}
+
+.photo-count {
+    position: absolute;
+    display: inline-block;
+    left: -1px;
+    bottom: -32px;
+    padding: 5px 8px;
+    background: #9002e1;
+    color: #ffffff;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.photo-close {
+    position: absolute;
+    border-radius: 24px;
+    height: 24px;
+    width: 24px;
+    top: -6px;
+    right: -6px;
+    background: url("/img/delete.gif") rgba(0,0,0,0.8) no-repeat center;
+    background-size: 60%;
+    cursor: pointer;
+}
+
+.photo-loading {
+    background: rgb(0,0,0) url("/img/photo-loading-white.gif") no-repeat center;
+    height: 100%;
+    opacity: 0.6;
+}
+
+
+
+
+
+
+
+
+
+.button {
+    padding: 5px 10px;
+    border: 1px solid #000000;
+    background: rgba(24, 7, 35, 0.8);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.button.cancel {
+    float: right;
+}
+
+.button:hover, .button.active {
+    background: rgba(144, 2, 235, 0.7);
+}
+.button:active {
+    background: rgba(94, 2, 120, 0.95);
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+.fix-table,.slide-table{
+    margin-top: -4px;
+}
+.fix-table td{
+    padding-top: 10px;
+}
+
+
+
+.pages {
+    text-align: center;
+    padding-top: 10px;
+    max-width: 100%;
+}
+.pages a {
+    text-decoration: none;
+    margin: 3px 2px;
+    font-weight: bold;
+}
+
+
+
+
+
+.contacts p {
+    max-width: 900px;
+    padding: 0 20px;
+    white-space: pre-line;
+}
+
+.contact {
+    color: #000;
+    background: rgb(255,255,224);
+    padding: 2px 3px;
+    border: 1px solid rgba(255,255,224,0.7);
+    font-weight: bold;
+}
+.contact a {
+    color: #000;
+}

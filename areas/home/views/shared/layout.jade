@@ -1,0 +1,109 @@
+!!! 5
+html
+    head
+        block title
+        meta(charset="utf-8")
+        link(rel="stylesheet", href="/css/jquery-ui/jquery-ui-1.10.3.custom.min.css")
+        link(rel="stylesheet", href="/css/main.css")
+        link(rel="stylesheet", href="/css/auth.css")
+        link(rel="stylesheet", href="/font-awesome/css/font-awesome.min.css")
+        block stylesheet
+    body(onresize="onResize()")
+        if (user.role == "admin")
+            #topUpload.upload-popup
+        .fixed
+            #topBack.fixed-top-back
+                .fixed-top-menu
+                    ul
+                        li
+                            a(href="/").home
+                                i.icon-home
+                                | &nbsp;Главная
+                        //
+                            li
+                                a(href="/home/afisha").afisha
+                                    i.icon-star-half-full
+                                    | &nbsp;Анонсы
+                        li
+                            a(href="/?page=1").photo
+                                i.icon-camera
+                                | &nbsp;Фото
+                        li
+                            a(href="/home/about").contacts
+                                i.icon-phone
+                                | &nbsp;Контакты
+                .fixed-top-logo
+                    a(href="/")
+                        img(src="/img/logo.png")
+                .fixed-top-upload
+                    if (user.role == "admin")
+                        input#uploadInput(type="file", multiple, accept="image/jpeg, image/png", name="photos", required)
+                        span#uploadPhotos(title="Загрузить новый альбом")
+                            i.icon-download-alt
+                        //
+                            span#uploadAnnounce(title="Загрузить анонс")
+                                i.icon-file-text
+                        block admin
+                .fixed-top-login
+                    if (!user.email)
+                        span#signIn
+                            i.icon-signin
+                            |  Войти
+                    else
+                        span.user-email
+                            i.icon-user
+                            |  #{user.email}
+                        span#logOut
+                            i.icon-signout
+                            |  Выйти
+            #authPopup
+                input#email(type="text",placeholder="Email...")
+                div.error.email
+                input#pass(type="password",placeholder="Пароль...")
+                div.error.pass
+                span#loginSubmit
+                    i.icon-ok
+                    span  Войти
+                span#register
+                    i.icon-user
+                    span  Регистрация
+                span#loginCancel(data-dismiss="modal")
+                    i.icon-remove
+                    |  Отмена
+        script.
+            function onResize() {
+                var width = window.innerWidth - 15;
+                var left = width/2;
+                document.getElementById('topBack').style.left = left + 'px';
+                document.body.style.width = width + 'px';
+                document.getElementById('topUpload').style.left = left + 'px';
+            }
+            onResize();
+        .wrapper
+            block view
+            .footer
+                table
+                    tr
+                        td
+                            | Администрация проекта&nbsp;
+                            a(href="mailto:support@naglyance.ru") support@naglyance.ru
+                        td
+                            | © Copyright 2011–2013 Все права защищены
+                        td
+                            | Powered by&nbsp;
+                            a(href="http://vk.com/yarabey") yarabey
+        block absolute
+        #uploadPopup.modal
+        #bigPhoto.photo-modal
+        block popups
+        script(type="text/javascript", src="/js/libs/jquery-2.0.2.min.js")
+        script(type="text/javascript", src="/js/libs/jquery-ui-1.10.3.custom.min.js")
+        script(type="text/javascript", src="/js/button.js")
+        script(type="text/javascript", src="/js/modal.js")
+        script(type="text/javascript", src="/js/main.js")
+        script(type="text/javascript", src="/js/auth.js")
+        script(type="text/javascript", src="/js/libs/date.format.js")
+        if (user.role == "admin")
+            script(type="text/javascript", src="/js/upload.js")
+        block scripts
+

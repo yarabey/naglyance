@@ -1,0 +1,149 @@
+.default-content, .slide-table {
+    width: 100%;
+}
+
+.default-content td {
+    text-align: center;
+}
+
+.toggle {
+    background: rgba(24, 7, 35, 1);
+    border: 1px solid black;
+    border-collapse: collapse;
+    color: white;
+    height: 40px;
+    width: 1020px;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: -10px;
+}
+
+.toggle i {
+    width: 20px;
+    display: inline-block;
+}
+
+.slide-table {
+    height: auto;
+}
+
+.slide-table td {
+    text-align: center;
+}
+
+.slide-album-item, .album-item-info {
+    display: inline-block;
+    position: relative;
+    width: 400px;
+    height: 270px;
+}
+
+.slide-album-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.min-photo-preview, .big-photo-preview {
+    position: absolute;
+    border-radius: 3px;
+    border: 2px solid white;
+}
+
+.big-photo-preview {
+    top: 0;
+    left: 0;
+    z-index: 1999;
+    width: 400px;
+    height: 270px;
+    text-align: right;
+}
+
+.min-photo-preview {
+    right: 5px;
+    z-index: 2000;
+    width: 105px;
+    height: 71px;
+}
+
+tr.double td {
+    vertical-align: top;
+    width: 50%;
+}
+
+    td h3, td p {
+        margin: 10px 0 5px 10px;
+    }
+
+hr.split {
+    border-style: dashed;
+    border-bottom: 0;
+    margin: 0 7px 0 7px;
+}
+
+.album-item-info i, .album-item-info .album-info-date {
+    font-size: 14px;
+    color: silver;
+    display: inline-block;
+}
+
+.album-item-info .album-info-date {
+    margin-left: 5px !important;
+}
+
+.album-item-info {
+    height: auto;
+    text-align: left;
+    position: absolute;
+    z-index: 3000;
+    background: rgba(24, 7, 35, 0.3);
+    width: auto;
+    max-width: 260px;
+    top: 5px;
+    left: 5px;
+    padding: 3px 4px;
+    border-radius: 5px;
+    opacity: 0.7;
+}
+
+.album-item-info .album-info {
+    display: inline-block;
+    position: relative;
+    bottom: 0;
+}
+
+.album-item-info .album-info  {
+    color: white;
+    width: 100%;
+}
+
+.album-item-info .album-info p {
+    margin: 4px 0;
+    font-size: 14px;
+    line-height: 1;
+    white-space: pre-line;
+}
+
+.album-item {
+    margin-top: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+.reports {
+    text-align: left !important;
+}
+
+.photo-week img {
+    width: 120px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid gray;
+    margin: 5px;
+}
+
+.photo-week img:hover {
+    border: 2px solid #ffffff;
+}
